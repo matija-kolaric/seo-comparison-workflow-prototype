@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "human-approval.schema.json",
+  "title": "Human approval decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "draft_version", "decision", "reviewer", "decided_at", "notes"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "draft_version": {"type": "integer", "minimum": 1},
+    "decision": {"enum": ["approved_for_staging", "changes_requested", "rejected"]},
+    "reviewer": {"type": "string", "minLength": 1},
+    "decided_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "notes": {"type": ["string", "null"]}
+  }
+}

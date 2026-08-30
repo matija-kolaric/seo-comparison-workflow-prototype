@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "source_draft_version": 1,
+  "target_draft_version": 2,
+  "generated_at": "2026-08-27T08:20:00Z",
+  "source_reviews": ["qa/fact-check-v1.json", "qa/seo-review-v1.json", "qa/quality-review-v1.json"],
+  "required_changes": [
+    {
+      "priority": "critical",
+      "instruction": "Remove the unsupported universal value claim.",
+      "claim_ids": []
+    },
+    {
+      "priority": "required",
+      "instruction": "Explain that a live research run is required for additional comparisons.",
+      "claim_ids": ["SEO-001", "AHR-001"]
+    }
+  ]
+}

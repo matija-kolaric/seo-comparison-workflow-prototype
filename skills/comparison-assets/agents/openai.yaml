@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comparison Assets"
+  short_description: "Prepare sourced comparison-page visuals"
+  default_prompt: "Use $comparison-assets to prepare the approved screenshots and visual evidence from this comparison brief."

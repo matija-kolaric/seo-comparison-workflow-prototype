@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "topic": "Seobility vs Ahrefs",
+  "page_type": "versus",
+  "language": "en",
+  "market": "United States",
+  "audience": "SEO professionals comparing website auditing workflows",
+  "data_mode": "fixture",
+  "status": "awaiting_human_approval",
+  "created_at": "2026-08-27T08:00:00Z",
+  "updated_at": "2026-08-27T08:30:00Z",
+  "revision_count": 1,
+  "max_draft_versions": 3,
+  "current_draft_version": 2,
+  "status_history": [
+    {"status": "initialized", "at": "2026-08-27T08:00:00Z", "reason": "Fixture run created."},
+    {"status": "research_ready", "at": "2026-08-27T08:05:00Z", "reason": "Fixture research loaded."},
+    {"status": "evidence_validated", "at": "2026-08-27T08:07:00Z", "reason": "Fixture claims and source references validated."},
+    {"status": "brief_ready", "at": "2026-08-27T08:10:00Z", "reason": "Content brief created."},
+    {"status": "draft_ready", "at": "2026-08-27T08:15:00Z", "reason": "Draft version 1 created."},
+    {"status": "reviewing", "at": "2026-08-27T08:16:00Z", "reason": "Draft version 1 reviews started."},
+    {"status": "revision_required", "at": "2026-08-27T08:20:00Z", "reason": "Unsupported value claim found in draft version 1."},
+    {"status": "draft_ready", "at": "2026-08-27T08:23:00Z", "reason": "Draft version 2 created."},
+    {"status": "reviewing", "at": "2026-08-27T08:24:00Z", "reason": "Draft version 2 reviews started."},
+    {"status": "qa_passed", "at": "2026-08-27T08:29:00Z", "reason": "All mandatory gates passed."},
+    {"status": "awaiting_human_approval", "at": "2026-08-27T08:30:00Z", "reason": "Final QA report created; staging requires human approval."}
+  ],
+  "artifacts": [
+    {"type": "serp_research", "path": "research/serp.json", "version": 1, "created_at": "2026-08-27T08:03:00Z", "sha256": null},
+    {"type": "competitor_research", "path": "research/competitor.json", "version": 1, "created_at": "2026-08-27T08:04:00Z", "sha256": null},
+    {"type": "seobility_research", "path": "research/seobility.json", "version": 1, "created_at": "2026-08-27T08:04:00Z", "sha256": null},
+    {"type": "content_brief", "path": "brief/content-brief.json", "version": 1, "created_at": "2026-08-27T08:10:00Z", "sha256": null},
+    {"type": "draft", "path": "drafts/comparison-v1.md", "version": 1, "created_at": "2026-08-27T08:15:00Z", "sha256": null},
+    {"type": "draft", "path": "drafts/comparison-v2.md", "version": 2, "created_at": "2026-08-27T08:23:00Z", "sha256": null},
+    {"type": "final_report", "path": "qa/final-report.json", "version": 1, "created_at": "2026-08-27T08:29:00Z", "sha256": null}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "run.schema.json",
+  "title": "Comparison workflow run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "run_id", "topic", "page_type", "language", "market", "audience",
+    "data_mode", "status", "created_at", "updated_at", "revision_count", "max_draft_versions",
+    "current_draft_version", "status_history", "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "topic": {"type": "string", "minLength": 3},
+    "page_type": {"enum": ["versus", "alternative"]},
+    "language": {"type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$"},
+    "market": {"type": "string", "minLength": 2},
+    "audience": {"type": ["string", "null"]},
+    "data_mode": {"enum": ["fixture", "live"]},
+    "status": {"$ref": "common.schema.json#/$defs/workflowStatus"},
+    "created_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "updated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "revision_count": {"type": "integer", "minimum": 0},
+    "max_draft_versions": {"type": "integer", "minimum": 1, "maximum": 10},
+    "current_draft_version": {"type": ["integer", "null"], "minimum": 1},
+    "status_history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["status", "at", "reason"],
+        "properties": {
+          "status": {"$ref": "common.schema.json#/$defs/workflowStatus"},
+          "at": {"$ref": "common.schema.json#/$defs/timestamp"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {"$ref": "common.schema.json#/$defs/artifact"}
+    }
+  }
+}

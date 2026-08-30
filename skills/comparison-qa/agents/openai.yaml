@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comparison QA"
+  short_description: "Review factual and SEO comparison quality"
+  default_prompt: "Use $comparison-qa to review this comparison draft for evidence, SEO, and editorial quality."

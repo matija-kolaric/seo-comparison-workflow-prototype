@@ -1,0 +1,80 @@
+{
+  "policy_version": "0.1",
+  "data_mode": "fixture",
+  "market": "United States",
+  "language": "en",
+  "costs": {"actual_usd": "0", "status": "synthetic_fixture_no_api_calls"},
+  "inventory": [
+    {"products": ["Seobility", "Ahrefs"], "status": "deployed_noindex", "slug": "seobility-vs-ahrefs", "url": "https://seobility-comparisons-site.pages.dev/seobility-vs-ahrefs/"}
+  ],
+  "candidates": [
+    {
+      "id": "example-audit",
+      "products": ["Seobility", "Example Audit"],
+      "page_type": "versus",
+      "primary_keyword": "seobility vs example audit",
+      "secondary_keywords": ["example audit vs seobility"],
+      "discovery_queries": ["seobility alternatives"],
+      "evaluation": "inspected",
+      "angle": "Synthetic example: compare the handoff from an audit to a practical fix list.",
+      "buyer_decision": "Synthetic example: choose a workflow for a small agency.",
+      "why_this_pair": "Fictional source observations indicate overlapping audit use cases.",
+      "why_now": "No growth conclusion: this fixture is a single synthetic snapshot.",
+      "tradeoffs": "A test candidate, not a real recommendation. Full research would still be required.",
+      "limitations": ["Synthetic demonstration only"],
+      "unresolved_conflicts": [],
+      "confidence": "medium",
+      "ratings": {
+        "intent": {"value": 4, "rationale": "Fictional SERP represents product-choice intent.", "evidence_refs": ["evidence/observations.md"]},
+        "fit": {"value": 3, "rationale": "Fictional products share an audit job.", "evidence_refs": ["evidence/observations.md"]},
+        "gap": {"value": 3, "rationale": "Simulated ranking pages omit plan-limit context.", "evidence_refs": ["evidence/observations.md"]},
+        "feasibility": {"value": 3, "rationale": "Fictional official sources are available.", "evidence_refs": ["evidence/observations.md"]}
+      },
+      "serp": {
+        "keyword": "seobility vs example audit",
+        "retrieved_at": "2026-08-30T00:00:00Z",
+        "evidence_refs": ["evidence/observations.md"],
+        "results": [
+          {"rank": 1, "url": "https://example.com/comparison-1"},
+          {"rank": 2, "url": "https://example.com/comparison-2"},
+          {"rank": 3, "url": "https://example.com/comparison-3"},
+          {"rank": 4, "url": "https://example.com/comparison-4"},
+          {"rank": 5, "url": "https://example.com/comparison-5"},
+          {"rank": 6, "url": "https://example.com/comparison-6"},
+          {"rank": 7, "url": "https://example.com/comparison-7"},
+          {"rank": 8, "url": "https://example.com/comparison-8"},
+          {"rank": 9, "url": "https://example.com/comparison-9"},
+          {"rank": 10, "url": "https://example.com/comparison-10"}
+        ]
+      },
+      "page_observations": [
+        {"url": "https://example.com/comparison-1", "retrieved_at": "2026-08-30T00:00:00Z", "note": "Synthetic page observation: missing plan-limit discussion.", "evidence_refs": ["evidence/observations.md"]}
+      ],
+      "official_sources": [
+        {"product": "Seobility", "url": "https://example.com/official-seobility-placeholder", "retrieved_at": "2026-08-30T00:00:00Z", "note": "Synthetic source availability, not an actual vendor verification.", "evidence_refs": ["evidence/observations.md"]},
+        {"product": "Example Audit", "url": "https://example.com/official-example-audit-placeholder", "retrieved_at": "2026-08-30T00:00:00Z", "note": "Synthetic source availability.", "evidence_refs": ["evidence/observations.md"]}
+      ],
+      "metrics": [
+        {"keyword": "seobility vs example audit", "search_volume": 90, "market": "United States", "language": "en", "period": "synthetic-2026-07", "retrieved_at": "2026-08-30T00:00:00Z", "evidence_refs": ["evidence/observations.md"]},
+        {"keyword": "example audit vs seobility", "search_volume": 50, "market": "United States", "language": "en", "period": "synthetic-2026-07", "retrieved_at": "2026-08-30T00:00:00Z", "evidence_refs": ["evidence/observations.md"]},
+        {"keyword": "seobility alternatives", "search_volume": 10000, "market": "United States", "language": "en", "period": "synthetic-2026-07", "retrieved_at": "2026-08-30T00:00:00Z", "evidence_refs": ["evidence/observations.md"]}
+      ]
+    },
+    {
+      "id": "existing-ahrefs",
+      "products": ["Ahrefs", "Seobility"],
+      "page_type": "versus",
+      "primary_keyword": "ahrefs vs seobility",
+      "evaluation": "not_evaluated",
+      "prefilter_reason": "Already deployed; reversed order does not create another page."
+    },
+    {
+      "id": "alternatives-list",
+      "products": ["Seobility", "Example Audit"],
+      "page_type": "alternatives",
+      "primary_keyword": "seobility alternatives",
+      "evaluation": "not_evaluated",
+      "prefilter_reason": "Discovery query only; alternatives pages are out of scope."
+    }
+  ]
+}

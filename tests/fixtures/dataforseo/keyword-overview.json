@@ -1,0 +1,27 @@
+{
+  "version": "fixture",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "cost": 0.02,
+  "tasks": [
+    {
+      "id": "keyword-task-001",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "cost": 0.02,
+      "data": {"keywords": ["seobility vs ahrefs", "ahrefs alternative"]},
+      "result": [
+        {
+          "keyword": "seobility vs ahrefs",
+          "keyword_info": {"search_volume": 90, "cpc": 4.25, "competition": 0.41},
+          "search_intent_info": {"main_intent": "commercial"}
+        },
+        {
+          "keyword": "ahrefs alternative",
+          "keyword_info": {"search_volume": 1300, "cpc": 8.5, "competition": 0.72},
+          "search_intent_info": {"main_intent": "commercial"}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "subject": {"name": "Ahrefs", "role": "competitor"},
+  "generated_at": "2026-08-27T08:04:00Z",
+  "sources": [
+    {
+      "source_id": "SRC-AHR-FIXTURE",
+      "source_type": "official_product_page",
+      "title": "Ahrefs fixture source",
+      "publisher": "Fixture publisher",
+      "url": "https://example.com/ahrefs-fixture",
+      "internal_reference": null,
+      "retrieved_at": "2026-08-27T08:02:00Z",
+      "content_hash": null
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "AHR-001",
+      "claim": "In this fixture, Ahrefs provides a site-auditing capability.",
+      "subject": "Ahrefs",
+      "fact_type": "feature",
+      "volatility": "periodic",
+      "source_ids": ["SRC-AHR-FIXTURE"],
+      "evidence": "Synthetic evidence for schema and workflow testing only.",
+      "status": "verified",
+      "valid_until": "2026-09-30",
+      "verified_by": "fixture",
+      "verified_at": "2026-08-27T08:04:00Z",
+      "notes": "Not approved for publication. Replace with live research."
+    }
+  ]
+}

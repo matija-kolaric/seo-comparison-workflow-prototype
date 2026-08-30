@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seobility-comparison-workflow"
+version = "0.1.0"
+description = "Deterministic workflow foundation for source-grounded SEO comparison pages"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["jsonschema>=4.18,<5"]
+
+[project.scripts]
+seobility-workflow = "seobility_workflow.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "final_draft_version": 2,
+  "generated_at": "2026-08-27T08:29:00Z",
+  "status": "pass",
+  "gate_results": {
+    "fact_check": "pass",
+    "seo_review": "pass",
+    "quality_review": "pass",
+    "revision_limit": "pass"
+  },
+  "quality_total": 27,
+  "unsupported_claims_count": 0,
+  "remaining_warnings": ["Fixture evidence must be replaced before publication."],
+  "recommended_next_status": "awaiting_human_approval"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comparison Research"
+  short_description: "Research sourced SEO product comparisons"
+  default_prompt: "Use $comparison-research to research this comparison topic with traceable evidence."

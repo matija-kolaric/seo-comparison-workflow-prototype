@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "content-brief.schema.json",
+  "title": "Comparison content brief",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "run_id", "generated_at", "intent", "audience", "primary_keyword",
+    "secondary_keywords", "angle", "reader_outcome", "sections", "avoid_claims", "metadata",
+    "internal_link_suggestions", "schema_opportunities", "interpretations"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "generated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "intent": {"enum": ["informational", "commercial", "transactional", "navigational", "mixed"]},
+    "audience": {"type": "string", "minLength": 1},
+    "primary_keyword": {"type": "string", "minLength": 1},
+    "secondary_keywords": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "angle": {"type": "string", "minLength": 1},
+    "reader_outcome": {"type": "string", "minLength": 1},
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["section_id", "heading", "purpose", "claim_ids", "keywords"],
+        "properties": {
+          "section_id": {"type": "string", "pattern": "^SEC-[0-9]{2}$"},
+          "heading": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1},
+          "claim_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/claimId"}},
+          "keywords": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "avoid_claims": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "meta_description", "slug"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1, "maxLength": 70},
+        "meta_description": {"type": "string", "minLength": 1, "maxLength": 170},
+        "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}
+      }
+    },
+    "internal_link_suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["anchor", "target"],
+        "properties": {
+          "anchor": {"type": "string", "minLength": 1},
+          "target": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "schema_opportunities": {"type": "array", "uniqueItems": true, "items": {"enum": ["Article", "FAQPage", "BreadcrumbList", "SoftwareApplication"]}},
+    "interpretations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["statement", "basis_claim_ids"],
+        "properties": {
+          "statement": {"type": "string", "minLength": 1},
+          "basis_claim_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/claimId"}}
+        }
+      }
+    }
+  }
+}

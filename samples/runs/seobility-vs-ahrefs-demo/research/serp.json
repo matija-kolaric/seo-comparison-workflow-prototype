@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "provider": {"name": "fixture", "mode": "fixture", "request_id": null},
+  "generated_at": "2026-08-27T08:03:00Z",
+  "queries": [
+    {
+      "keyword": "seobility vs ahrefs",
+      "intent": "commercial",
+      "search_volume": null,
+      "cpc": null,
+      "competition": null,
+      "results": [
+        {
+          "rank": 1,
+          "title": "Fixture comparison result",
+          "url": "https://example.com/fixture-comparison",
+          "domain": "example.com",
+          "result_type": "organic"
+        }
+      ]
+    }
+  ],
+  "related_questions": ["Which product fits a website-auditing workflow?"]
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Shared workflow definitions",
+  "$defs": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "runId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{2,79}$"
+    },
+    "claimId": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_-]{2,63}$"
+    },
+    "workflowStatus": {
+      "enum": [
+        "initialized",
+        "research_ready",
+        "evidence_validated",
+        "brief_ready",
+        "draft_ready",
+        "reviewing",
+        "revision_required",
+        "qa_passed",
+        "awaiting_human_approval",
+        "approved_for_staging",
+        "staging_draft_created",
+        "completed",
+        "blocked_invalid_evidence",
+        "blocked_qa_failure",
+        "blocked_integration_failure",
+        "needs_human_review"
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "path", "version", "created_at"],
+      "properties": {
+        "type": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "version": {"type": "integer", "minimum": 1},
+        "created_at": {"$ref": "#/$defs/timestamp"},
+        "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_id", "source_type", "title", "publisher", "url", "retrieved_at"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^SRC-[A-Z0-9_-]{2,60}$"},
+        "source_type": {
+          "enum": ["official_product_page", "official_docs", "internal_approved", "first_party", "independent"]
+        },
+        "title": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "url": {"type": ["string", "null"], "format": "uri"},
+        "internal_reference": {"type": ["string", "null"]},
+        "snapshot_path": {"type": ["string", "null"]},
+        "retrieved_at": {"$ref": "#/$defs/timestamp"},
+        "content_hash": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}
+      },
+      "anyOf": [
+        {
+          "required": ["url"],
+          "properties": {"url": {"type": "string", "format": "uri"}}
+        },
+        {
+          "required": ["internal_reference"],
+          "properties": {"internal_reference": {"type": "string", "minLength": 1}}
+        }
+      ]
+    },
+    "evidenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id", "claim", "subject", "fact_type", "volatility", "source_ids",
+        "evidence", "status", "verified_by", "verified_at"
+      ],
+      "properties": {
+        "claim_id": {"$ref": "#/$defs/claimId"},
+        "claim": {"type": "string", "minLength": 1},
+        "subject": {"type": "string", "minLength": 1},
+        "fact_type": {
+          "enum": ["feature", "pricing", "limitation", "audience", "positioning", "integration", "support", "metric", "other"]
+        },
+        "volatility": {"enum": ["stable", "periodic", "volatile"]},
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^SRC-[A-Z0-9_-]{2,60}$"}
+        },
+        "evidence": {"type": "string", "minLength": 1},
+        "status": {"enum": ["verified", "conflicting", "unverified", "expired"]},
+        "valid_until": {"type": ["string", "null"], "format": "date"},
+        "verified_by": {"enum": ["human", "automated", "fixture"]},
+        "verified_at": {"$ref": "#/$defs/timestamp"},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finding_id", "severity", "category", "message", "required", "claim_ids", "recommendation"],
+      "properties": {
+        "finding_id": {"type": "string", "pattern": "^[A-Z]+-[0-9]{3}$"},
+        "severity": {"enum": ["critical", "error", "warning", "info"]},
+        "category": {"type": "string", "minLength": 1},
+        "message": {"type": "string", "minLength": 1},
+        "location": {"type": ["string", "null"]},
+        "required": {"type": "boolean"},
+        "claim_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/claimId"}
+        },
+        "recommendation": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

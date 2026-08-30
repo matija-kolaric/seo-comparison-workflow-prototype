@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "draft_version": 2,
+  "generated_at": "2026-08-27T08:27:00Z",
+  "status": "pass",
+  "scores": {
+    "factual_accuracy": 5,
+    "search_intent_match": 5,
+    "comparative_usefulness": 4,
+    "specificity": 4,
+    "originality": 4,
+    "positioning_clarity": 5
+  },
+  "total_score": 27,
+  "findings": [],
+  "required_changes": []
+}

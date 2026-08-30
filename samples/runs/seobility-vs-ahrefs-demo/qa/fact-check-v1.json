@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "draft_version": 1,
+  "generated_at": "2026-08-27T08:17:00Z",
+  "status": "fail",
+  "unsupported_claims_count": 1,
+  "claims_evaluated": [
+    {
+      "statement": "Each product includes an auditing capability.",
+      "location": "Website auditing, sentence 1",
+      "claim_ids": ["SEO-001", "AHR-001"],
+      "support_status": "supported"
+    },
+    {
+      "statement": "Seobility is always the best value for every SEO team.",
+      "location": "Website auditing, sentence 2",
+      "claim_ids": [],
+      "support_status": "unsupported"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FACT-001",
+      "severity": "critical",
+      "category": "unsupported_claim",
+      "message": "The universal value claim has no supporting evidence.",
+      "location": "Website auditing, sentence 2",
+      "required": true,
+      "claim_ids": [],
+      "recommendation": "Remove the claim or add verified value and pricing evidence."
+    }
+  ],
+  "required_changes": ["Remove the unsupported universal value claim."]
+}

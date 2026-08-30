@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "subject": {"name": "Seobility", "role": "seobility"},
+  "generated_at": "2026-08-27T08:04:00Z",
+  "sources": [
+    {
+      "source_id": "SRC-SEO-FIXTURE",
+      "source_type": "internal_approved",
+      "title": "Seobility fixture knowledge record",
+      "publisher": "Fixture publisher",
+      "url": null,
+      "internal_reference": "fixtures/seobility-knowledge-v1",
+      "retrieved_at": "2026-08-27T08:02:00Z",
+      "content_hash": null
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "SEO-001",
+      "claim": "In this fixture, Seobility provides a website-auditing capability.",
+      "subject": "Seobility",
+      "fact_type": "feature",
+      "volatility": "periodic",
+      "source_ids": ["SRC-SEO-FIXTURE"],
+      "evidence": "Synthetic evidence for schema and workflow testing only.",
+      "status": "verified",
+      "valid_until": "2026-09-30",
+      "verified_by": "fixture",
+      "verified_at": "2026-08-27T08:04:00Z",
+      "notes": "Not approved for publication. Replace with an approved Seobility source."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-policy.schema.json",
+  "title": "Operational research policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "freshness_days", "minimum_sources", "allowed_source_types", "human_review_required", "prohibited_evidence"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "freshness_days": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feature", "pricing", "limitation", "audience", "positioning", "integration", "support", "metric", "other"],
+      "properties": {
+        "feature": {"type": "integer", "minimum": 1},
+        "pricing": {"type": "integer", "minimum": 1},
+        "limitation": {"type": "integer", "minimum": 1},
+        "audience": {"type": "integer", "minimum": 1},
+        "positioning": {"type": "integer", "minimum": 1},
+        "integration": {"type": "integer", "minimum": 1},
+        "support": {"type": "integer", "minimum": 1},
+        "metric": {"type": "integer", "minimum": 1},
+        "other": {"type": "integer", "minimum": 1}
+      }
+    },
+    "minimum_sources": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 1},
+      "required": ["feature", "pricing", "limitation", "audience", "positioning", "integration", "support", "metric", "other"]
+    },
+    "allowed_source_types": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feature", "pricing", "limitation", "audience", "positioning", "integration", "support", "metric", "other"],
+      "properties": {
+        "feature": {"$ref": "#/$defs/sourceTypes"},
+        "pricing": {"$ref": "#/$defs/sourceTypes"},
+        "limitation": {"$ref": "#/$defs/sourceTypes"},
+        "audience": {"$ref": "#/$defs/sourceTypes"},
+        "positioning": {"$ref": "#/$defs/sourceTypes"},
+        "integration": {"$ref": "#/$defs/sourceTypes"},
+        "support": {"$ref": "#/$defs/sourceTypes"},
+        "metric": {"$ref": "#/$defs/sourceTypes"},
+        "other": {"$ref": "#/$defs/sourceTypes"}
+      }
+    },
+    "human_review_required": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"enum": ["feature", "pricing", "limitation", "audience", "positioning", "integration", "support", "metric", "other"]}
+    },
+    "prohibited_evidence": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "sourceTypes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"enum": ["official_product_page", "official_docs", "internal_approved", "first_party", "independent"]}
+    }
+  }
+}

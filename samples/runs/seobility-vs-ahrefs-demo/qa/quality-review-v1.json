@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "draft_version": 1,
+  "generated_at": "2026-08-27T08:19:00Z",
+  "status": "fail",
+  "scores": {
+    "factual_accuracy": 2,
+    "search_intent_match": 5,
+    "comparative_usefulness": 3,
+    "specificity": 3,
+    "originality": 4,
+    "positioning_clarity": 4
+  },
+  "total_score": 21,
+  "findings": [
+    {
+      "finding_id": "QUALITY-001",
+      "severity": "error",
+      "category": "factual_accuracy",
+      "message": "An unsupported superlative weakens accuracy and balance.",
+      "location": "Website auditing, sentence 2",
+      "required": true,
+      "claim_ids": [],
+      "recommendation": "Replace the superlative with a limitation statement grounded in the available evidence."
+    }
+  ],
+  "required_changes": ["Remove the unsupported superlative and state the limits of the fixture evidence."]
+}

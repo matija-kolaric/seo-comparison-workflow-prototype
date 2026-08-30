@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comparison Writer"
+  short_description: "Write source-grounded comparison pages"
+  default_prompt: "Use $comparison-writer to draft a comparison page from the approved brief and claims."

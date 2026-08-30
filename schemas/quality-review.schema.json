@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quality-review.schema.json",
+  "title": "Draft quality review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "draft_version", "generated_at", "status", "scores", "total_score", "findings", "required_changes"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "draft_version": {"type": "integer", "minimum": 1},
+    "generated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "status": {"enum": ["pass", "fail"]},
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["factual_accuracy", "search_intent_match", "comparative_usefulness", "specificity", "originality", "positioning_clarity"],
+      "properties": {
+        "factual_accuracy": {"type": "integer", "minimum": 1, "maximum": 5},
+        "search_intent_match": {"type": "integer", "minimum": 1, "maximum": 5},
+        "comparative_usefulness": {"type": "integer", "minimum": 1, "maximum": 5},
+        "specificity": {"type": "integer", "minimum": 1, "maximum": 5},
+        "originality": {"type": "integer", "minimum": 1, "maximum": 5},
+        "positioning_clarity": {"type": "integer", "minimum": 1, "maximum": 5}
+      }
+    },
+    "total_score": {"type": "integer", "minimum": 6, "maximum": 30},
+    "findings": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/finding"}},
+    "required_changes": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  }
+}

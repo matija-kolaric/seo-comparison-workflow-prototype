@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "serp-research.schema.json",
+  "title": "SERP and keyword research artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "provider", "generated_at", "queries", "related_questions"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "mode", "request_id"],
+      "properties": {
+        "name": {"enum": ["fixture", "manual", "dataforseo_api", "dataforseo_mcp", "other"]},
+        "mode": {"enum": ["fixture", "live"]},
+        "request_id": {"type": ["string", "null"]},
+        "endpoints": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "raw_response_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "total_cost": {"type": ["number", "null"], "minimum": 0},
+        "normalized_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+        "normalizer_version": {"type": "string", "minLength": 1}
+      }
+    },
+    "generated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "queries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["keyword", "intent", "search_volume", "cpc", "competition", "results"],
+        "properties": {
+          "keyword": {"type": "string", "minLength": 1},
+          "intent": {"enum": ["informational", "commercial", "transactional", "navigational", "mixed", "unknown"]},
+          "search_volume": {"type": ["integer", "null"], "minimum": 0},
+          "cpc": {"type": ["number", "null"], "minimum": 0},
+          "competition": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["rank", "title", "url", "domain", "result_type"],
+              "properties": {
+                "rank": {"type": "integer", "minimum": 1},
+                "title": {"type": "string", "minLength": 1},
+                "url": {"type": "string", "format": "uri"},
+                "domain": {"type": "string", "minLength": 1},
+                "result_type": {"enum": ["organic", "paid", "featured_snippet", "video", "other"]}
+              }
+            }
+          }
+        }
+      }
+    },
+    "related_questions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

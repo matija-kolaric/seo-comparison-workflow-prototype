@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "final-report.schema.json",
+  "title": "Final QA report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "final_draft_version", "generated_at", "status", "gate_results", "quality_total", "unsupported_claims_count", "remaining_warnings", "recommended_next_status"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "final_draft_version": {"type": "integer", "minimum": 1},
+    "generated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "status": {"enum": ["pass", "fail"]},
+    "gate_results": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact_check", "seo_review", "quality_review", "revision_limit"],
+      "properties": {
+        "fact_check": {"enum": ["pass", "fail"]},
+        "seo_review": {"enum": ["pass", "fail"]},
+        "quality_review": {"enum": ["pass", "fail"]},
+        "revision_limit": {"enum": ["pass", "fail"]}
+      }
+    },
+    "quality_total": {"type": "integer", "minimum": 6, "maximum": 30},
+    "unsupported_claims_count": {"type": "integer", "minimum": 0},
+    "remaining_warnings": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "recommended_next_status": {"$ref": "common.schema.json#/$defs/workflowStatus"}
+  }
+}

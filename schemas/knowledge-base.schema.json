@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "knowledge-base.schema.json",
+  "title": "Maintained product knowledge base",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "product", "status", "updated_at", "reviewed_at", "reviewed_by", "sources", "claims"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "product": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "approved"]},
+    "updated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "reviewed_at": {"type": ["string", "null"], "format": "date-time"},
+    "reviewed_by": {"type": ["string", "null"]},
+    "sources": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/source"}},
+    "claims": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/evidenceRecord"}}
+  }
+}

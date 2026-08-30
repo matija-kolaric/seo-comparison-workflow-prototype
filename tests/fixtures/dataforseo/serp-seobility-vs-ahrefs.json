@@ -1,0 +1,38 @@
+{
+  "version": "fixture",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "tasks": [
+    {
+      "id": "serp-task-001",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "cost": 0.002,
+      "data": {"keyword": "seobility vs ahrefs"},
+      "result": [
+        {
+          "keyword": "seobility vs ahrefs",
+          "items": [
+            {
+              "type": "organic",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "title": "Fixture comparison",
+              "url": "https://example.com/comparison",
+              "domain": "example.com"
+            },
+            {
+              "type": "people_also_ask",
+              "rank_group": 1,
+              "rank_absolute": 2,
+              "items": [
+                {"title": "Which SEO audit tool should I choose?"},
+                {"title": "What should an SEO tool comparison include?"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

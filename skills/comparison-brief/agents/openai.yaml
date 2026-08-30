@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comparison Brief"
+  short_description: "Plan a grounded SEO comparison page"
+  default_prompt: "Use $comparison-brief to turn the supplied research into a concise content brief."

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "draft_version": 2,
+  "generated_at": "2026-08-27T08:25:00Z",
+  "status": "pass",
+  "unsupported_claims_count": 0,
+  "claims_evaluated": [
+    {
+      "statement": "Each product includes an auditing capability.",
+      "location": "Website auditing, sentence 1",
+      "claim_ids": ["SEO-001", "AHR-001"],
+      "support_status": "supported"
+    }
+  ],
+  "findings": [],
+  "required_changes": []
+}

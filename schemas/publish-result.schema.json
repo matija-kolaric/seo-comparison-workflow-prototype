@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "publish-result.schema.json",
+  "title": "WordPress staging publish result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "draft_version", "provider", "created_at", "status", "page_id", "url", "wordpress_post_status", "protection", "validation"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "draft_version": {"type": "integer", "minimum": 1},
+    "provider": {"enum": ["wordpress_api", "wordpress_mcp"]},
+    "created_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "status": {"enum": ["success", "failure"]},
+    "page_id": {"type": ["integer", "string", "null"]},
+    "url": {"type": ["string", "null"], "format": "uri"},
+    "wordpress_post_status": {"enum": ["draft", "pending", "private"]},
+    "protection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["noindex", "nofollow", "password_protected", "staging_environment"],
+      "properties": {
+        "noindex": {"const": true},
+        "nofollow": {"const": true},
+        "password_protected": {"type": "boolean"},
+        "staging_environment": {"const": true}
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "content_present", "noindex_confirmed", "protection_confirmed", "checked_at"],
+      "properties": {
+        "method": {"enum": ["wordpress_api", "wordpress_mcp", "playwright"]},
+        "content_present": {"type": "boolean"},
+        "noindex_confirmed": {"type": "boolean"},
+        "protection_confirmed": {"type": "boolean"},
+        "checked_at": {"$ref": "common.schema.json#/$defs/timestamp"}
+      }
+    },
+    "error": {"type": ["string", "null"]}
+  }
+}

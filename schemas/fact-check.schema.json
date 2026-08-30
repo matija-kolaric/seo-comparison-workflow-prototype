@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fact-check.schema.json",
+  "title": "Draft fact-check report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "draft_version", "generated_at", "status", "unsupported_claims_count", "claims_evaluated", "findings", "required_changes"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"$ref": "common.schema.json#/$defs/runId"},
+    "draft_version": {"type": "integer", "minimum": 1},
+    "generated_at": {"$ref": "common.schema.json#/$defs/timestamp"},
+    "status": {"enum": ["pass", "fail"]},
+    "unsupported_claims_count": {"type": "integer", "minimum": 0},
+    "claims_evaluated": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["statement", "location", "claim_ids", "support_status"],
+        "properties": {
+          "statement": {"type": "string", "minLength": 1},
+          "location": {"type": "string", "minLength": 1},
+          "claim_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "common.schema.json#/$defs/claimId"}},
+          "support_status": {"enum": ["supported", "partially_supported", "unsupported", "contradicted"]}
+        }
+      }
+    },
+    "findings": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/finding"}},
+    "required_changes": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  }
+}

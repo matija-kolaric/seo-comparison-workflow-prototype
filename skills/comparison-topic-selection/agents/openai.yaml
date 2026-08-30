@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comparison Topic Selection"
+  short_description: "Rank evidence-backed Seobility comparison opportunities"
+  default_prompt: "Use $comparison-topic-selection to choose the next Seobility comparison pages and return an evidence-backed queue for review."

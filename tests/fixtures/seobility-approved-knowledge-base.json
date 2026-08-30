@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "product": "Seobility",
+  "status": "approved",
+  "updated_at": "2026-08-27T08:00:00Z",
+  "reviewed_at": "2026-08-27T08:00:00Z",
+  "reviewed_by": "Test reviewer",
+  "sources": [
+    {
+      "source_id": "SRC-SEO-TEST",
+      "source_type": "internal_approved",
+      "title": "Approved fixture source",
+      "publisher": "Test fixture",
+      "url": null,
+      "internal_reference": "tests/fixtures/seobility-approved-source",
+      "retrieved_at": "2026-08-27T08:00:00Z",
+      "content_hash": null
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "SEO-TEST-001",
+      "claim": "Fixture-only approved Seobility feature claim.",
+      "subject": "Seobility",
+      "fact_type": "feature",
+      "volatility": "periodic",
+      "source_ids": ["SRC-SEO-TEST"],
+      "evidence": "Synthetic evidence used only for unit testing.",
+      "status": "verified",
+      "valid_until": "2026-09-15",
+      "verified_by": "human",
+      "verified_at": "2026-08-27T08:00:00Z",
+      "notes": "Not publishable."
+    }
+  ]
+}

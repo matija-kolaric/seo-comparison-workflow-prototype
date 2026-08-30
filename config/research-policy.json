@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "freshness_days": {
+    "feature": 30,
+    "pricing": 7,
+    "limitation": 30,
+    "audience": 90,
+    "positioning": 90,
+    "integration": 30,
+    "support": 30,
+    "metric": 14,
+    "other": 30
+  },
+  "minimum_sources": {
+    "feature": 1,
+    "pricing": 1,
+    "limitation": 2,
+    "audience": 1,
+    "positioning": 1,
+    "integration": 1,
+    "support": 1,
+    "metric": 1,
+    "other": 1
+  },
+  "allowed_source_types": {
+    "feature": ["official_product_page", "official_docs", "internal_approved", "first_party"],
+    "pricing": ["official_product_page", "official_docs", "internal_approved"],
+    "limitation": ["official_product_page", "official_docs", "internal_approved", "first_party", "independent"],
+    "audience": ["official_product_page", "official_docs", "internal_approved", "first_party", "independent"],
+    "positioning": ["official_product_page", "official_docs", "internal_approved", "first_party"],
+    "integration": ["official_product_page", "official_docs", "internal_approved", "first_party"],
+    "support": ["official_product_page", "official_docs", "internal_approved", "first_party"],
+    "metric": ["official_docs", "internal_approved", "first_party", "independent"],
+    "other": ["official_product_page", "official_docs", "internal_approved", "first_party", "independent"]
+  },
+  "human_review_required": ["pricing", "limitation", "metric"],
+  "prohibited_evidence": [
+    "search-result snippets without opening the source",
+    "model memory or model-generated summaries without a source",
+    "anonymous reviews without corroboration",
+    "affiliate comparison copy used as the sole source",
+    "stale cached pages whose retrieval date cannot be established"
+  ]
+}

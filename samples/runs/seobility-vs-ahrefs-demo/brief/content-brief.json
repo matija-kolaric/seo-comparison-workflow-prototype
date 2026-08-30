@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "run_id": "seobility-vs-ahrefs-demo",
+  "generated_at": "2026-08-27T08:10:00Z",
+  "intent": "commercial",
+  "audience": "SEO professionals comparing website auditing workflows",
+  "primary_keyword": "seobility vs ahrefs",
+  "secondary_keywords": ["ahrefs alternative", "seo audit tool comparison"],
+  "angle": "Help readers compare the supported auditing capabilities without declaring a universal winner.",
+  "reader_outcome": "The reader understands which verified dimensions deserve closer evaluation.",
+  "sections": [
+    {
+      "section_id": "SEC-01",
+      "heading": "Seobility vs Ahrefs at a glance",
+      "purpose": "State the scope and avoid unsupported winner claims.",
+      "claim_ids": ["SEO-001", "AHR-001"],
+      "keywords": ["seobility vs ahrefs"]
+    },
+    {
+      "section_id": "SEC-02",
+      "heading": "Website auditing",
+      "purpose": "Compare only the auditing capabilities supported by the fixture.",
+      "claim_ids": ["SEO-001", "AHR-001"],
+      "keywords": ["seo audit tool comparison"]
+    }
+  ],
+  "avoid_claims": ["Do not name a universal winner.", "Do not compare pricing without verified pricing records."],
+  "metadata": {
+    "title": "Seobility vs Ahrefs: A Focused Comparison",
+    "meta_description": "Compare Seobility and Ahrefs using verified evidence and decide which areas deserve closer evaluation for your SEO workflow.",
+    "slug": "seobility-vs-ahrefs"
+  },
+  "internal_link_suggestions": [{"anchor": "website auditing", "target": "/website-audit/"}],
+  "schema_opportunities": ["Article", "BreadcrumbList"],
+  "interpretations": [
+    {
+      "statement": "Both products can be evaluated for website-auditing use cases within this fixture.",
+      "basis_claim_ids": ["SEO-001", "AHR-001"]
+    }
+  ]
+}

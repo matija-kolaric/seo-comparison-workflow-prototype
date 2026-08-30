@@ -1,0 +1,29 @@
+{
+  "version": "fixture",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "tasks": [
+    {
+      "id": "serp-task-002",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "cost": 0.002,
+      "data": {"keyword": "ahrefs alternative"},
+      "result": [
+        {
+          "keyword": "ahrefs alternative",
+          "items": [
+            {
+              "type": "featured_snippet",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "title": "Fixture alternatives",
+              "url": "https://example.org/alternatives",
+              "domain": "example.org"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
