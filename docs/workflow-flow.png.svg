@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1350" viewBox="0 0 2400 1350" role="img" aria-labelledby="title desc">
+  <title id="title">AI-assisted SEO comparison workflow</title>
+  <desc id="desc">A left-to-right workflow from topic selection through human approval, research, writing, quality evaluation and static publishing, with optional DataForSEO, traceability and control gates.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#52616b"/></marker>
+    <marker id="blueArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 Z" fill="#237baf"/></marker>
+    <style>
+      .title { font: 700 58px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill:#163044 }
+      .subtitle { font: 400 28px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill:#52616b }
+      .label { font: 700 27px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill:#163044 }
+      .small { font: 500 23px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill:#52616b }
+      .pill { font: 700 21px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; fill:#237baf }
+      .box { fill:#fff; stroke:#cdd9e1; stroke-width:3 }
+      .approval { fill:#f5f0dd; stroke:#bea94f; stroke-width:3 }
+      .system { fill:#edf7fb; stroke:#78b8d8; stroke-width:3 }
+      .control { fill:#f7f7f8; stroke:#9ea9b0; stroke-width:3; stroke-dasharray:10 8 }
+    </style>
+  </defs>
+  <rect width="2400" height="1350" fill="#f6f9fb"/>
+  <text x="120" y="120" class="title">AI-assisted SEO comparison workflow</text>
+  <text x="120" y="170" class="subtitle">Specialized skills handle editorial work; explicit approvals and control gates protect the workflow.</text>
+
+  <path d="M350 420 H420" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M630 420 H700" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M910 420 H980" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M1190 420 H1260" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M1470 420 H1540" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M1750 420 H1820" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <path d="M2030 420 H2100" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(120 350)"><rect width="230" height="140" rx="16" class="system"/><text x="115" y="60" text-anchor="middle" class="label">Topic</text><text x="115" y="94" text-anchor="middle" class="label">selection</text><text x="115" y="120" text-anchor="middle" class="small">skill</text></g>
+  <g transform="translate(420 350)"><rect width="210" height="140" rx="16" class="approval"/><text x="105" y="58" text-anchor="middle" class="label">Human-approved</text><text x="105" y="92" text-anchor="middle" class="label">queue</text><text x="105" y="120" text-anchor="middle" class="small">decision boundary</text></g>
+  <g transform="translate(700 350)"><rect width="210" height="140" rx="16" class="box"/><text x="105" y="65" text-anchor="middle" class="label">Research</text><text x="105" y="108" text-anchor="middle" class="small">claims + sources</text></g>
+  <g transform="translate(980 350)"><rect width="210" height="140" rx="16" class="box"/><text x="105" y="65" text-anchor="middle" class="label">Brief</text><text x="105" y="108" text-anchor="middle" class="small">search intent plan</text></g>
+  <g transform="translate(1260 350)"><rect width="210" height="140" rx="16" class="box"/><text x="105" y="65" text-anchor="middle" class="label">Assets</text><text x="105" y="108" text-anchor="middle" class="small">visual evidence</text></g>
+  <g transform="translate(1540 350)"><rect width="210" height="140" rx="16" class="box"/><text x="105" y="65" text-anchor="middle" class="label">Writer</text><text x="105" y="108" text-anchor="middle" class="small">traceable draft</text></g>
+  <g transform="translate(1820 350)"><rect width="210" height="140" rx="16" class="system"/><text x="105" y="65" text-anchor="middle" class="label">QA evaluation</text><text x="105" y="108" text-anchor="middle" class="small">quality gate</text></g>
+  <g transform="translate(2100 350)"><rect width="210" height="140" rx="16" class="approval"/><text x="105" y="56" text-anchor="middle" class="label" style="font-size:24px">Human</text><text x="105" y="87" text-anchor="middle" class="label" style="font-size:24px">publication review</text><text x="105" y="119" text-anchor="middle" class="small" style="font-size:20px">approval boundary</text></g>
+
+  <path d="M2205 500 V635 H1280" stroke="#52616b" stroke-width="5" fill="none" marker-end="url(#arrow)"/>
+  <g transform="translate(1010 565)"><rect width="270" height="140" rx="16" class="system"/><text x="135" y="60" text-anchor="middle" class="label">Website export + tests</text><text x="135" y="105" text-anchor="middle" class="small">clean publishable output</text></g>
+  <path d="M1010 635 H900" stroke="#52616b" stroke-width="5" marker-end="url(#arrow)"/>
+  <g transform="translate(620 565)"><rect width="280" height="140" rx="16" class="system"/><text x="140" y="60" text-anchor="middle" class="label">GitHub + Cloudflare</text><text x="140" y="105" text-anchor="middle" class="small">static preview publish</text></g>
+
+  <path d="M235 350 V275 H320" stroke="#237baf" stroke-width="4" stroke-dasharray="12 10" fill="none" marker-end="url(#blueArrow)"/>
+  <g transform="translate(320 200)"><rect width="300" height="92" rx="14" class="system"/><text x="150" y="38" text-anchor="middle" class="pill">OPTIONAL DATA LAYER</text><text x="150" y="70" text-anchor="middle" class="small">DataForSEO · budget bounded</text></g>
+
+  <path d="M805 490 V880 H940" stroke="#237baf" stroke-width="4" stroke-dasharray="12 10" fill="none" marker-end="url(#blueArrow)"/>
+  <path d="M1925 490 V880 H1230" stroke="#237baf" stroke-width="4" stroke-dasharray="12 10" fill="none" marker-end="url(#blueArrow)"/>
+  <g transform="translate(940 825)"><rect width="290" height="110" rx="16" class="control"/><text x="145" y="45" text-anchor="middle" class="label">Traceability</text><text x="145" y="79" text-anchor="middle" class="small">sources · receipts · hashes</text></g>
+
+  <path d="M235 490 V1070 H820" stroke="#52616b" stroke-width="4" stroke-dasharray="12 10" fill="none" marker-end="url(#arrow)"/>
+  <path d="M1925 490 V1070 H1200" stroke="#52616b" stroke-width="4" stroke-dasharray="12 10" fill="none" marker-end="url(#arrow)"/>
+  <g transform="translate(820 1015)"><rect width="380" height="110" rx="16" class="control"/><text x="190" y="45" text-anchor="middle" class="label">Control gates</text><text x="190" y="79" text-anchor="middle" class="small">scope · budget · quality stops</text></g>
+
+  <text x="120" y="1230" class="subtitle">The lightweight orchestrator coordinates verified handoffs and persists state; it does not run unattended or make editorial decisions.</text>
+</svg>
